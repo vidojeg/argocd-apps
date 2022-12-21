@@ -1,6 +1,5 @@
 apps:
   grafana:
-    namespace: grafana
     repoURL: https://github.com/vidojeg/k8s.git
     targetRevision: master
     path: grafana
