@@ -2,8 +2,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: 
-      - https://github.com/vidojeg/k8s.git
+    repoURL: https://github.com/vidojeg/k8s.git
     targetRevision: master
 
 namespace:
