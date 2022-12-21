@@ -1,16 +1,24 @@
+{{ range $key, $value := .Values.apps }}
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app
+  name: {{ $key }}
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: {{- range .Values.namespace }} {{ . }} {{ end }}
-    server: {{ .Values.spec.destination.server }}
+    namespace: {{ $value.namespace }}
+    server: https://kubernetes.default.svc
   project: default
   source:
-    path: {{- range .Values.path }} {{ . }} {{ end }}
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: {{ $value.path }}
+    repoURL: {{ $value.repoURL }}
+    targetRevision: {{ $value.targetRevision }}
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+{{ end }}

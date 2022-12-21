@@ -1,12 +1,11 @@
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-  source:
+apps:
+  grafana:
+    namespace: grafana
     repoURL: https://github.com/vidojeg/k8s.git
     targetRevision: master
-
-namespace:
-  - grafana
-
-path:
-  - grafana
+    path: grafana
+  sonarqube:
+    namespace: sonarqube
+    repoURL: https://github.com/vidojeg/k8s.git
+    targetRevision: master
+    path: sonarqube
