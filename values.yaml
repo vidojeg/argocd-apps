@@ -2,8 +2,9 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/ananasGit/devops-dummy-app-k8s
+    repoURL: 
+      - https://github.com/vidojeg/k8s.git
     targetRevision: master
 
 namespace:
-  - dummy-app-dev
+  - grafana
