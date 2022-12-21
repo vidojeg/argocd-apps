@@ -4,8 +4,8 @@ apps:
     repoURL: https://github.com/vidojeg/k8s.git
     targetRevision: master
     path: grafana
-  # sonarqube:
-  #   namespace: sonarqube
-  #   repoURL: https://github.com/vidojeg/k8s.git
-  #   targetRevision: master
-  #   path: sonarqube
+  sonarqube:
+    namespace: sonarqube
+    repoURL: https://github.com/vidojeg/k8s.git
+    targetRevision: master
+    path: sonarqube
