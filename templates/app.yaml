@@ -11,7 +11,7 @@ spec:
   destination:
     namespace: {{ $key }}
     server: https://kubernetes.default.svc
-  project: default
+  project: {{ $key }}
   source:
     path: {{ default "." $value.path }}
     repoURL: {{ $value.repoURL }}
@@ -21,4 +21,23 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ $key }}
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destinations:
+    - namespace: {{ $key }}
+      server: https://kubernetes.default.svc
+  sourceRepos:
+    -  {{ $value.repoURL }}
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+status: {}
 {{ end }}
