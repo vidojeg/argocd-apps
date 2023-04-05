@@ -40,6 +40,8 @@ spec:
   destinations:
     - namespace: {{ $key }}
       server: https://kubernetes.default.svc
+    - namespace: kube-system
+      server: https://kubernetes.default.svc
   sourceRepos:
     -  {{ $val.helm_chart_repo }}
     -  {{ $val.value_file_url }}
