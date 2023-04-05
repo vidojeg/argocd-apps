@@ -12,7 +12,7 @@ spec:
     namespace: {{ $key }}
     server: https://kubernetes.default.svc
   project: {{ $key }}
-  source:
+  sources:
     - repoURL: {{ $val.helm_chart_repo }}
       chart: {{ $val.helm_chart }}
       targetRevision: {{ $val.helm_chart_version }}
