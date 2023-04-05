@@ -1,0 +1,48 @@
+{{- range $key, $val := .Values.helm }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $key }}
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: {{ $key }}
+    server: https://kubernetes.default.svc
+  project: {{ $key }}
+  source:
+    - repoURL: {{ $val.helm_chart_repo }}
+      chart: {{ $val.helm_chart }}
+      targetRevision: {{ $val.helm_chart_version }}
+      helm:
+        valueFiles:
+          - $values/{{ $key }}/values.yaml
+    - repoURL: {{ $val.value_file_url }}
+      targetRevision: {{ $val.value_revision }}
+      ref: values
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ $key }}
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destinations:
+    - namespace: {{ $key }}
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+status: {}  
+{{ end -}}
+

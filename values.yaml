@@ -7,3 +7,17 @@ apps:
     repoURL: https://github.com/vidojeg/k8s.git
     targetRevision: master
     path: sonarqube
+
+helm:
+  prometheus:
+    helm_chart_repo: https://prometheus-community.github.io/helm-charts
+    helm_chart: kube-prometheus-stack
+    helm_chart_version: 45.9.0
+    value_file_url: https://github.com/vidojeg/helm-values.git
+    value_revision: main
+  github-self-hosted-runner:
+    helm_chart_repo: https://actions-runner-controller.github.io/actions-runner-controller
+    helm_chart: actions-runner-controller
+    helm_chart_version: 0.23.0
+    value_file_url: https://github.com/vidojeg/helm-values.git
+    value_revision: main
