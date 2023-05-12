@@ -8,6 +8,6 @@ helm:
   jenkins:
     helm_chart_repo: https://charts.jenkins.io/
     helm_chart: jenkins
-    helm_chart_version: 4.3.23
+    helm_chart_version: 2.18.2
     value_file_url: https://github.com/vidojeg/helm-values.git
     value_revision: main
