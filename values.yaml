@@ -14,5 +14,5 @@ helm:
   crossplane:
     helm_chart_repo: https://charts.crossplane.io/master/
     helm_chart: crossplane
-    helm_chart_version: 1.2.1
+    helm_chart_version: 1.13.0-rc.0.280.gd735a93c
     value_file_url: https://github.com/vidojeg/helm-values.git
