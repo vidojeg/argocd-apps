@@ -3,6 +3,10 @@ apps:
     repoURL: https://github.com/vidojeg/k8s.git
     targetRevision: master
     path: sonarqube
+  tekton-dashboard:
+    repoURL: https://github.com/vidojeg/k8s.git
+    targetRevision: master
+    path: tekton-dashboard
 
 helm:
   helm-dashboard:
