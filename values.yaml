@@ -11,7 +11,7 @@ apps:
   java-ci:
     repoURL: https://github.com/vidojeg/java-tekton-ci.git
     targetRevision: main
-    path: java-ci
+    path: .
     namespace: tekton-pipelines
 
 helm:
