@@ -9,7 +9,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: {{ $key }}
+    namespace: {{ default $key $val.namespace }}
     server: https://kubernetes.default.svc
   project: {{ $key }}
   sources:
@@ -40,7 +40,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destinations:
-    - namespace: {{ default $key $value.namespace }}
+    - namespace: {{ default $key $val.namespace }}
       server: https://kubernetes.default.svc
     - namespace: kube-system
       server: https://kubernetes.default.svc
