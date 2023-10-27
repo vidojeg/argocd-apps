@@ -8,6 +8,11 @@ apps:
     targetRevision: master
     path: tekton-dashboard
     namespace: tekton-pipelines
+  java-ci:
+    repoURL: https://github.com/vidojeg/java-tekton-ci.git
+    targetRevision: main
+    path: java-ci
+    namespace: tekton-pipelines
 
 helm:
   helm-dashboard:
