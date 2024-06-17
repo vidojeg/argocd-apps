@@ -33,3 +33,9 @@ helm:
     helm_chart_version: 1.15.0
     value_file_url: https://github.com/vidojeg/helm-values.git
     value_revision: main
+  ingress-nginx:
+    helm_chart_repo: https://helm.nginx.com/stable
+    helm_chart: nginx-ingress
+    helm_chart_version: 1.2.2
+    value_file_url: https://github.com/vidojeg/helm-values.git
+    value_revision: main
