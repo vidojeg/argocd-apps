@@ -16,7 +16,7 @@ apps:
   node-ms-3:
     repoURL: https://github.com/vidojeg/node-ms-3-k8s.git
     targetRevision: master
-    path: .
+    path: overlays/dev
     namespace: node-ms-3
 
 helm:
