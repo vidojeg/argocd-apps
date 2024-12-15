@@ -20,7 +20,7 @@ apps:
     namespace: node-ms-3
   node-ms:
     repoURL: https://github.com/botopsy/node-ms-k8s
-    targetRevision: master
+    targetRevision: main
     path: overlays/dev
     namespace: node-ms
 helm:
