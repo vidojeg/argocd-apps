@@ -23,6 +23,11 @@ apps:
     targetRevision: main
     path: overlays/dev
     namespace: node-ms
+  java-ms:
+    repoURL: https://github.com/botopsy/java-ms-k8s
+    targetRevision: main
+    path: overlays/dev
+    namespace: java-ms
 helm:
   helm-dashboard:
     helm_chart_repo: https://helm-charts.komodor.io
