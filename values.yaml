@@ -38,6 +38,11 @@ apps:
     targetRevision: main
     path: overlays/dev
     namespace: dotnet-ms
+  go-app:
+    repoURL: https://github.com/botopsy/go-app-k8s
+    targetRevision: main
+    path: overlays/dev
+    namespace: go-app
 helm:
   helm-dashboard:
     helm_chart_repo: https://helm-charts.komodor.io
